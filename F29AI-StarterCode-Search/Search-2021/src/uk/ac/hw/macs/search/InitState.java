@@ -6,6 +6,9 @@ public class InitState implements State{
 	private boolean goal;
 
 	
+	
+	
+	
 	//two constructors
 	public InitState(int heuristic)
 	{
