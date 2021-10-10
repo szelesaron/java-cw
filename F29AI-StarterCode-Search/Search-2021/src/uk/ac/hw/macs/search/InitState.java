@@ -31,5 +31,10 @@ public class InitState implements State{
 	public int getHeuristic() {
 		return this.heuristic;
 	}
+	
+	@Override
+	public String toString() {
+		return "InintState [value=" + heuristic + ", goal=" + goal + "]";
+	}
 
 }

@@ -1,10 +1,9 @@
 package uk.ac.hw.macs.search;
-import uk.ac.hw.macs.search.example.IntState;
 
 public class AStarMain {
 	
 	private static Node addChild(int value, boolean goal, Node parent) {
-		Node child = new Node(new IntState(value, goal));
+		Node child = new Node(new InitState(value, goal));
 		parent.addChild(child, 1);
 		return child;
 	}
