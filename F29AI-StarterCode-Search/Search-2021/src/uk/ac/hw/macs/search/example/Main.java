@@ -27,7 +27,7 @@ public class Main {
 		root.addChild(goal, 1);
 
 		// Run the search
-		SearchOrder order = new BreadthFirstSearchOrder();
+		SearchOrder order = new DepthFirstSearchOrder();
 		SearchProblem problem = new SearchProblem(order);
 		problem.doSearch(root);
 	}

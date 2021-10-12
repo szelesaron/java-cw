@@ -2,19 +2,19 @@ package uk.ac.hw.macs.search;
 
 public class InitState implements State{
 	
-	private int heuristic;
+	private int value;
 	private boolean goal;
 
 	
 	//two constructors
-	public InitState(int heuristic)
+	public InitState(int value)
 	{
-		this.heuristic = heuristic;
+		this.value = value;
 		this.goal = false;
 	}
 	
-	public InitState (int heuristic, boolean goal) {
-		this.heuristic = heuristic;
+	public InitState (int value, boolean goal) {
+		this.value = value;
 		this.goal = goal;
 	}
 	
@@ -25,13 +25,16 @@ public class InitState implements State{
 	}
 
 	@Override
+	/*
+	 * Calculate Manhattan distance TODO
+	 */
 	public int getHeuristic() {
-		return this.heuristic;
+		return 0;
 	}
 	
 	@Override
 	public String toString() {
-		return "InintState [value=" + heuristic + ", goal=" + goal + "]";
+		return "InintState [value=" + value + ", goal=" + goal + "]";
 	}
 
 }
