@@ -2,32 +2,46 @@ package uk.ac.hw.macs.search;
 
 public class AStarMain {
 	
+	//get the heuristic based on the manhattan distance
+	private static int setHeuristic(int from, int to)
+	{
+		String from_string = String.valueOf(from);
+		String to_string = String.valueOf(to);
+		
+		return Math.abs(Character.getNumericValue(from_string.charAt(0)) - Character.getNumericValue(to_string.charAt(0))) + 
+				Math.abs(Character.getNumericValue(from_string.charAt(1)) - Character.getNumericValue(to_string.charAt(1)));			
+
+	}
+	
 	public static void main(String[] args) {
 	
 
 		//tree one lower left part
-		Node start = new Node(new InitState(11, false, 1));
-		Node two_one = new Node(new InitState(21, false, 1));
-		Node three_one = new Node(new InitState(31, false, 1));
-		Node four_one = new Node(new InitState(41, false, 1));
-		Node four_two = new Node(new InitState(42, false, 1));
-		Node four_three = new Node(new InitState(43, false, 1));
-		Node three_three = new Node(new InitState(33, false, 1));
-		Node three_four = new Node(new InitState(34, false, 1));
-		Node goal = new Node(new InitState(44, true, 1));
+		int goal_id = 44;
+		Node goal = new Node(new InitState(goal_id, true, 0));
+		
+		Node start = new Node(new InitState(11, false, setHeuristic(11, goal_id)));
+		Node two_one = new Node(new InitState(21, false, setHeuristic(21, goal_id)));
+		Node three_one = new Node(new InitState(31, false, setHeuristic(31, goal_id)));
+		Node four_one = new Node(new InitState(41, false, setHeuristic(41, goal_id)));
+		Node four_two = new Node(new InitState(42, false, setHeuristic(42, goal_id)));
+		Node four_three = new Node(new InitState(43, false, setHeuristic(43, goal_id)));
+		Node three_three = new Node(new InitState(33, false, setHeuristic(33, goal_id)));
+		Node three_four = new Node(new InitState(34, false, setHeuristic(34, goal_id)));
+		
 		
 		//right part
-		Node one_two = new Node(new InitState(12, false, 1));
-		Node one_three = new Node(new InitState(13, false, 1));
-		Node one_four = new Node(new InitState(14, false, 1));
-		Node one_five = new Node(new InitState(15, false, 1));
-		Node one_six = new Node(new InitState(16, false, 1));
-		Node two_five = new Node(new InitState(25, false, 1));
-		Node two_six = new Node(new InitState(26, false, 1));
-		Node three_five = new Node(new InitState(35, false, 1));
-		Node three_six = new Node(new InitState(36, false, 1));
-		Node four_five = new Node(new InitState(45, false, 1));
-		Node four_six = new Node(new InitState(46, false, 1));	
+		Node one_two = new Node(new InitState(12, false, setHeuristic(12, goal_id)));
+		Node one_three = new Node(new InitState(13, false, setHeuristic(13, goal_id)));
+		Node one_four = new Node(new InitState(14, false, setHeuristic(14, goal_id)));
+		Node one_five = new Node(new InitState(15, false, setHeuristic(15, goal_id)));
+		Node one_six = new Node(new InitState(16, false, setHeuristic(16, goal_id)));
+		Node two_five = new Node(new InitState(25, false, setHeuristic(25, goal_id)));
+		Node two_six = new Node(new InitState(26, false, setHeuristic(26, goal_id)));
+		Node three_five = new Node(new InitState(35, false, setHeuristic(35, goal_id)));
+		Node three_six = new Node(new InitState(36, false, setHeuristic(36, goal_id)));
+		Node four_five = new Node(new InitState(45, false, setHeuristic(45, goal_id)));
+		Node four_six = new Node(new InitState(46, false, setHeuristic(46, goal_id)));	
 		
 		//left part
 		start.addChild(two_one, 1);
