@@ -10,7 +10,7 @@ public class AStarSearchOrder implements SearchOrder {
 		//add them based on cost
 		for(ChildWithCost child: children)
 		{
-			frontier.add(new FringeNode(child.node, parent, child.cost + child.node.getValue().getHeuristic()));
+			frontier.add(new FringeNode(child.node, parent, child.cost));
 		}
 		
 	}

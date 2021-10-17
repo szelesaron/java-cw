@@ -22,9 +22,6 @@ public class InitState implements State{
 	}
 
 	@Override
-	/*
-	 * Calculate Manhattan distance TODO
-	 */
 	public int getHeuristic() {
 		return this.heuristic;
 	}
