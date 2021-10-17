@@ -4,18 +4,15 @@ public class InitState implements State{
 	
 	private int value;
 	private boolean goal;
+	private int heuristic;
 
 	
-	//two constructors
-	public InitState(int value)
+	
+	public InitState (int value, boolean goal, int heuristic) 
 	{
 		this.value = value;
-		this.goal = false;
-	}
-	
-	public InitState (int value, boolean goal) {
-		this.value = value;
 		this.goal = goal;
+		this.heuristic = heuristic;
 	}
 	
 	
@@ -29,12 +26,12 @@ public class InitState implements State{
 	 * Calculate Manhattan distance TODO
 	 */
 	public int getHeuristic() {
-		return 0;
+		return this.heuristic;
 	}
 	
 	@Override
 	public String toString() {
-		return "InintState [value=" + value + ", goal=" + goal + "]";
+		return "InitState [value=" + value + ", goal=" + goal  + " heuristic=" + heuristic+ "]";
 	}
 
 }
