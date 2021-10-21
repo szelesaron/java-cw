@@ -137,8 +137,8 @@ public class AStarMain {
 		SearchOrder order = new AStarSearchOrder();
 		SearchProblem problem = new SearchProblem(order);
 		
-		//problem.doSearch(build_grid_1());
-		problem.doSearch(build_grid_2());
+		problem.doSearch(build_grid_1());
+		//problem.doSearch(build_grid_2());
 
 	}
 
